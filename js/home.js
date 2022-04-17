@@ -2,7 +2,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebas
 import { getDatabase, ref, set, get, push } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
 import { getStorage, ref as ref2, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-storage.js";
 
+const displayName = (localStorage.getItem("displayName")).slice(1,-1)
 
+const welcomeMessage = document.getElementById("welcomeMessage")
+welcomeMessage.textContent = "Welcome, " + displayName
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
@@ -216,11 +219,13 @@ const plansContent = document.getElementById("plansContent")
 const logsContent = document.getElementById("logsContent")
 const statsContent = document.getElementById("statsContent")
 const particlesJS = document.getElementById("particles-js")
+const pranit = document.getElementById("pranit")
 
 const doctorID = localStorage.getItem("doctorID")
 
 profile.addEventListener("click", function(){
     particlesJS.setAttribute("style", "display: none")
+    pranit.setAttribute("style", "display: none")
     profileContent.setAttribute("style", "display:block;")
     managePatientsContent.setAttribute("style", "display: none;")
     plansContent.setAttribute("style", "display: none;")
@@ -229,7 +234,7 @@ profile.addEventListener("click", function(){
 
 
     //console.log(user)
-    const displayName = (localStorage.getItem("displayName")).slice(1,-1)
+
     const email = (localStorage.getItem("email")).slice(1,-1)
     const emailVerified = (localStorage.getItem("emailVerified"))
     let phoneNumber = (localStorage.getItem("phoneNumber"))
@@ -280,7 +285,7 @@ profile.addEventListener("click", function(){
 
 manage.addEventListener("click", function(){
     particlesJS.setAttribute("style", "display: none")
-
+    pranit.setAttribute("style", "display: none")
     managePatientsContent.setAttribute("style", "display: block;")
     profileContent.setAttribute("style", "display:none;")
     plansContent.setAttribute("style", "display: none;")
@@ -297,7 +302,9 @@ manage.addEventListener("click", function(){
         let numPatient = 0
         for (let key in patients){
             console.log(doctorID)
+            console.log(patients[key]["doctorID"])
             if (patients[key]["doctorID"] == doctorID){
+              console.log("hi")
                 console.log(key)
                 numPatient++
                 let tr = document.createElement("tr")
@@ -335,7 +342,7 @@ manage.addEventListener("click", function(){
 
 plans.addEventListener("click", function(){
     particlesJS.setAttribute("style", "display: none")
-
+    pranit.setAttribute("style", "display: none")
     let flag = false
     plansContent.setAttribute("style", "display: block;")
     profileContent.setAttribute("style", "display:none;")
@@ -655,7 +662,7 @@ plans.addEventListener("click", function(){
 
 logs.addEventListener("click", function(){
     particlesJS.setAttribute("style", "display: none")
-
+    pranit.setAttribute("style", "display: none")
     logsContent.setAttribute("style", "display: block")
     profileContent.setAttribute("style", "display:none;")
     managePatientsContent.setAttribute("style", "display: none;")
@@ -838,7 +845,7 @@ logs.addEventListener("click", function(){
 
 stats.addEventListener("click", function(){
     particlesJS.setAttribute("style", "display: none")
-
+    pranit.setAttribute("style", "display: none")
     statsContent.setAttribute("style", "display: block;")
     profileContent.setAttribute("style", "display:none;")
     managePatientsContent.setAttribute("style", "display: none;")
