@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            overflow-x: hidden;
+            /* background-color: #F6F7EB; */
+            font-family: 'Quicksand', sans-serif;
+            /* color: #74679b !important; */
+            background-image: url(images/gradient.png);
+        }
+        /* div#rankTable {
+            margin: 20px auto;
+        }
+        table, th, td {
+
+            border:1px solid black;
+            
+        } */
+        td {
+            font-family: 'Quicksand', sans-serif;
+        }
+        .styled-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 50%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        .styled-table thead tr {
+            background-color: #74679b;
+            color: #ffffff;
+            text-align: left;
+        }
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+        }
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #e6e3e3;
+            color: black;
+        }
+        .styled-table tbody tr:nth-of-type(odd) {
+            background-color: #cecece;
+            color: black;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #74679b;
+        }
+        .styled-table tbody tr.active-row {
+            font-weight: bold;
+            color: #F35361;
+        }
+        .headerButton {
+            height: 70px;
+            background: transparent;
+            border: none;
+            color: #F6F7EB;
+            font-size: 30px;
+            font-family: 'Quicksand', sans-serif;
+            margin-left: 30px;
+            transition: all 0.2s;
+            z-index: 1;
+            color: black;
+            font-size: 15px;
+        }
+        .headerButton:hover {
+            color: #F35361;
+        }
+        #profilePic {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            margin-left: 200px;
+            margin-top: 90px;
+            border-radius: 50%;
+        }
+        #displayName {
+            display: inline-block;
+            font-size: 60px;
+            position: absolute;
+            margin-left: 60px;
+            margin-top: 150px;
+            transition: all 0.2s;
+            color: white;
+
+        }
+        #displayName:hover {
+            color: #F35361
+        }
+        #phonenumber {
+            font-size: 20px;
+            position: absolute;
+            margin-top: 60px;
+            margin-left: 210px;
+            color: white;
+
+        }
+        button:focus{
+            outline: none;
+        }
+        #doctorIDProfile {
+            font-size: 20px;
+            position: absolute;
+            margin-top: 100px;
+            margin-left: 210px;
+            color: white;
+
+        }
+        #email {
+            font-size: 20px;
+            position: absolute;
+            margin-top: 140px;
+
+            margin-left: 210px;
+            color: white;
+
+        }
+        #emailVerified {
+            font-size: 20px;
+            position: absolute;
+            margin-top: 180px;
+            margin-left: 210px;
+            color: white;
+
+        }
+        #joined {
+            font-size: 20px;
+            position: absolute;
+            margin-top: 220px;
+            color: white;
+
+            margin-left: 210px;
+        }
+        #lastsignin {
+            font-size: 20px;
+            position: absolute;
+            margin-top: 260px;
+            color: white;
+            margin-left: 210px;
+        }
+        #moveLeftStats {
+            color: white;
+            transition: all 0.2s;
+        }
+        #moveLeftStats:hover {
+            color: black;
+        }
+        #moveRightStats {
+            color: white;
+            transition: all 0.2s;
+        }
+        #moveRightStats:hover {
+            color: black;
+        }
+        #moveLeft {
+            color: white;
+            transition: all 0.2s;
+        }
+        #moveLeft:hover {
+            color: black;
+        }
+        #moveRight {
+            color: white;
+            transition: all 0.2s;
+        }
+        #moveRight:hover {
+            color: black;
+        }
+        #plansExercisesContent {
+            background: #74679b;
+            color: #f5f6ea;
+            border-radius: 8px;
+            height: fit-content;
+            padding: 10px;
+            text-align: center;
+            width: 50%;
+        }
+        #addExercise {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 20px;
+            width: 200px;
+            height: 40px;
+            border: solid black 1px;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 25px;
+            
+        }
+        #submitAddExercise {
+            padding-left: 10px;
+            padding-right: 10px;
+
+        }
+        #therapyTrakHome{
+            text-decoration: none;
+            color: black;
+            margin-top: 20px;
+            margin-left: 30px;
+            font-weight: 900;
+        }
+        #moveRightPatientVideo {
+            color: white;
+            transition: all 0.2s;
+        }
+        #moveRightPatientVideo:hover {
+            color: black;
+        }
+        #moveLeftPatientVideo {
+            color: white;
+            transition: all 0.2s;
+        }
+        #moveLeftPatientVideo:hover {
+            color: black;
+        }
+        #moveLeftVideo {
+            color: white;
+            transition: all 0.2s;
+        }
+        #moveLeftVideo:hover {
+            color: black;
+        }
+        #moveRightVideo {
+            color: white;
+            transition: all 0.2s;
+        }
+        #moveRightVideo:hover {
+            color: black;
+        }
+        .wrapper {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            width: 90%;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <header style = "height: 70px; background-color: white;margin: -10px; z-index: 1">
+        <a class="navbar-brand" id = "therapyTrakHome"href="index.html">therapyTrak</a>
+
+        
+        <button id = "manage" class = "headerButton" style = "float:right; margin-right: 30px;">
+            Manage Patients
+        </button>
+        <button id = "plans"class = "headerButton"  style = "float:right;">
+            Plans
+        </button>
+        <button id = "logs"class = "headerButton"  style = "float:right;">
+            Logs/Videos
+        </button>
+        <button id = "stats"class = "headerButton"  style = "float:right;">
+            Stats
+        </button>
+        <button id = "profile" class = "headerButton" style = "float:right;">
+            Your Profile
+        </button>
+    </header>
+
+    <div id = "content">
+        <div style = "z-index: -1" id="particles-js"></div>
+
+        <div id = "profileContent" style = "display: none;">
+            <img id = "profilePic">
+            <p id = "displayName"></p>
+            <p id = "phonenumber"></p>
+            <p id = "doctorIDProfile"></p>
+            <p id = "email"></p>
+            <p id = "emailVerified"></p>
+            <p id = "joined"></p>
+            <p id = "lastsignin"></p>
+
+
+
+
+        </div>
+        <div id = "managePatientsContent"style = "display: none;">
+            <center><h2 style = "font-size: 30px; margin-top: 40px; color: white;">Your Patients: </h2>
+            <table style = "height: 80%;"class="styled-table">
+                <thead>
+                    <tr>
+                        <td>
+                            Patient Number
+                        </td>
+                        <td >
+                            Patient ID
+                        </td>
+                        <td>
+                            Patient Name
+                        </td>
+                    </tr>
+                </thead>
+                <tbody id = "patientsTable">
+
+                </tbody>
+            </table></center>
+        </div>
+        <div id = "plansContent"style = "display: none;">
+            <header style = "height: 30px; display: inline-block;width: 100%; margin-bottom: 50px; margin-top: 20px;">
+                <center><button id = "moveLeft" style = "display: inline-block; font-size: 30px;background: transparent; border: none;">
+                    ◁
+                </button>
+                <h3 id = "patientName" style = "display: inline-block; font-size: 30px; color: white; ">
+                </h3>
+                <button id = "moveRight" style = "display: inline-block;font-size: 30px; background: transparent; border: none;">
+                    ▷
+                </button></center>
+            </header>
+            <center><div id = "plansExercisesContent">
+                <h3 style = "color: white;">Current Exercises: </h3>
+            </div></center>
+
+        </div>
+        <div id = "logsContent"style = "display: none;">
+            <header style = "height: 30px; display: inline-block; width: 100%; margin-top: 20px; margin-bottom: 75px">
+                <center><button id = "moveLeftPatientVideo" style = "display: inline-block; font-size: 30px;background: transparent; border: none;">
+                    ◁
+                </button>
+                <h3 id = "patientNameVideo" style = "display: inline-block; font-size: 30px; color: white;">
+                </h3>
+                <button id = "moveRightPatientVideo" style = "display: inline-block;font-size: 30px; background: transparent; border: none; ">
+                    ▷
+                </button></center>
+            </header>
+            <div style = "width: 100%; margin-top: 100px;">
+                <button id = "moveLeftVideo" style = "display: inline-block; font-size: 30px;background: transparent; border: none; float: left; margin-top: 110px;">
+                    ◁
+                </button>
+                <div style = "display: grid; grid-template-areas: 'vid stats'; grid-template-columns: 70% 20%;" >
+                    <video style = "margin-left: 150px; display: grid; grid-area: vid;"id = "video" width="500" height="250" controls>
+                        <!-- <source id = "video" type="video/mp4"></source> -->
+                    </video>
+                    <div style = "display: grid; grid-area: stats; margin-left: -50px;">
+                        <h3 style = "color:white;">Stats at a glance: </h3>
+                        <p style = "margin-top: 0px;color:white; width: fit-content;"id = "vidDate">
+                            
+                        </p>
+                        <p style = "margin-top: 0px;color:white;width: fit-content;"id = "vidReps">
+                            
+                        </p>
+                        <p style = "margin-top: 0px;color:white;width: fit-content;"id = "vidHeartrate">
+                            
+                        </p>
+                        <p style = "margin-top: 0px;color:white;width: fit-content;"id = "vidStretch">
+                            
+                        </p>
+                        <p style = "margin-top: 0px;color:white;width: fit-content;"id = "vidTime">
+                            
+                        </p>
+                    </div>
+                        
+                </div>
+                
+                <button id = "moveRightVideo" style = "display: inline-block;font-size: 30px; background: transparent; border: none; float: right; margin-top: -165px;">
+                    ▷
+                </button>
+                <!-- hidden to transfer data -->
+                <p id = "metadatakinda" style = "display: none;"></p>
+
+            </div>
+            
+        </div>
+        <div id = "statsContent"style = "display: none;">
+            <header style = "height: 30px; display: inline-block; width: 100%; margin-bottom: 75px; margin-top: 20px;">
+                <center><button id = "moveLeftStats" style = "display: inline-block; font-size: 30px;background: transparent; border: none;">
+                    ◁
+                </button>
+                <h3 id = "patientNameStats" style = "display: inline-block; font-size: 30px; color: white;">
+                </h3>
+                <button id = "moveRightStats" style = "display: inline-block;font-size: 30px; background: transparent; border: none;">
+                    ▷
+                </button></center>
+            </header>
+            <center><div class="wrapper">
+                <canvas id="myChart"></canvas>
+            </div></center>
+        </div>
+
+    </div>
+    <script type = "module" src= "js/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/particles.min.js"></script>
+    <script src="js/particle.js"></script>
+</body>
+</html>
