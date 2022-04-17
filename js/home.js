@@ -221,7 +221,7 @@ const statsContent = document.getElementById("statsContent")
 const particlesJS = document.getElementById("particles-js")
 const pranit = document.getElementById("pranit")
 
-const doctorID = localStorage.getItem("doctorID")
+const doctorID = parseInt(JSON.parse(localStorage.getItem("doctorID")))
 
 profile.addEventListener("click", function(){
     particlesJS.setAttribute("style", "display: none")
@@ -301,9 +301,9 @@ manage.addEventListener("click", function(){
         let patients = info.val()
         let numPatient = 0
         for (let key in patients){
-            console.log(doctorID)
+            console.log(parseInt(JSON.parse(doctorID)))
             console.log(patients[key]["doctorID"])
-            if (patients[key]["doctorID"] == doctorID){
+            if (patients[key]["doctorID"] == parseInt(JSON.parse(doctorID))){
               console.log("hi")
                 console.log(key)
                 numPatient++
@@ -416,17 +416,25 @@ plans.addEventListener("click", function(){
             if (flag == true){
                 return
             }
-            let input = document.createElement("input")
-            input.type = "text"
+            let input = document.createElement("select")
+            
             input.style.borderTopLeftRadius = "8px"
             input.style.borderBottomLeftRadius = "8px"
             input.style.height = "40px"
             input.style.border=  "none"
             input.style.padding = "0"
-            input.placeholder = "New Exercise"
             input.style.textAlign = "center"
             input.style.fontFamily = "'Quicksand', sans-serif"
             input.style.fontSize = "20px"
+            let option = document.createElement("option")
+            option.value = "Squats"
+            option.textContent = "Squats"
+            let option2 = document.createElement("option")
+            option2.value = "Hand-Raises"
+            option2.textContent = "Hand-Raises"
+            input.appendChild(option)
+            input.appendChild(option2)
+
             let submit = document.createElement("button")
             submit.id = "submitAddExercise"
             submit.style.border=  "none"
@@ -507,17 +515,24 @@ plans.addEventListener("click", function(){
             if (flag == true) {
                 return
             }
-            let input = document.createElement("input")
-            input.type = "text"
+            let input = document.createElement("select")
+            
             input.style.borderTopLeftRadius = "8px"
             input.style.borderBottomLeftRadius = "8px"
             input.style.height = "40px"
             input.style.border=  "none"
             input.style.padding = "0"
-            input.placeholder = "New Exercise"
             input.style.textAlign = "center"
             input.style.fontFamily = "'Quicksand', sans-serif"
             input.style.fontSize = "20px"
+            let option = document.createElement("option")
+            option.value = "Squats"
+            option.textContent = "Squats"
+            let option2 = document.createElement("option")
+            option2.value = "Hand-raises"
+            option2.textContent = "Hand-raises"
+            input.appendChild(option)
+            input.appendChild(option2)
             let submit = document.createElement("button")
             submit.style.border=  "none"
             submit.style.borderTopRightRadius = "8px"
@@ -598,17 +613,24 @@ plans.addEventListener("click", function(){
             if (flag == true){
                 return
             }
-            let input = document.createElement("input")
-            input.type = "text"
+            let input = document.createElement("select")
+            
             input.style.borderTopLeftRadius = "8px"
             input.style.borderBottomLeftRadius = "8px"
             input.style.height = "40px"
             input.style.border=  "none"
             input.style.padding = "0"
-            input.placeholder = "New Exercise"
             input.style.textAlign = "center"
             input.style.fontFamily = "'Quicksand', sans-serif"
             input.style.fontSize = "20px"
+            let option = document.createElement("option")
+            option.value = "Squats"
+            option.textContent = "Squats"
+            let option2 = document.createElement("option")
+            option2.value = "Hand-Raises"
+            option2.textContent = "Hand-Raises"
+            input.appendChild(option)
+            input.appendChild(option2)
             let submit = document.createElement("button")
             submit.id = "submitAddExercise"
             submit.style.border=  "none"
