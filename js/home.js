@@ -897,7 +897,7 @@ stats.addEventListener("click", function(){
                   for (let innerkey in patients[key]["stats"]){
                       labelArr.push(patients[key]["stats"][innerkey]["date"])
                       heartRateArr.push(patients[key]["stats"][innerkey]["heartrate"])
-                      timesArr.push(patients[key]["stats"][innerkey]["time"])
+                      timesArr.push(patients[key]["stats"][innerkey]["time"].slice(3,6))
                       repsArr.push(patients[key]["stats"][innerkey]["reps"])
                     
                     }
