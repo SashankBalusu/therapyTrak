@@ -1,5 +1,6 @@
 # therapyTrak
 check it out: https://devpost.com/software/therapytrak
+
 Our project was inspired by our personal experiences with physical therapy and the lack of motivation patients possess throughout their treatment. 
 
 According to Heidi Jannenga, over 20% of physical therapy patients drop out of their treatment within the first 3 visits, and 70% fail to complete their full course of care. We aim to make physical therapy more engaging and approachable to those in need. 
